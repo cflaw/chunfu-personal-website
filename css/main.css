@@ -11,35 +11,32 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
-svg {
-  width: 120%;
-}
-
 .welcome {
   background: #FBFBFB;
   height: 97vh;
   width: 98vw;
   min-height: 500px;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
-.welcome .portrait-img {
+.welcome .name {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.welcome .name p {
+  margin: 0;
+  font-size: 3.7em;
+  text-align: center;
+}
+
+.welcome .name .portrait-img {
   width: 350px;
-  max-width: 40%;
+  max-width: 20%;
   height: auto;
   width: auto\9;
   /* ie8 */
-  margin-top: 15vh;
-}
-
-.name {
-  text-align: center;
-}
-
-.name p {
-  margin: 0;
-  font-size: 4em;
-  text-align: center;
+  margin-top: 3vh;
 }
 
 .underline {
@@ -54,20 +51,41 @@ svg {
   height: 120px;
   background: #FF9D22;
   cursor: pointer;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
   background-image: url("../images/resume.png");
   background-size: 118px 120px;
   background-repeat: no-repeat;
-  animation-name: bounce-before;
-  animation-timing-function: ease-in-out;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  /* For Chrome & Safari */
-  -webkit-animation-name: bounce-before;
-  -webkit-animation-timing-function: ease-in-out;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
+  animation: 2s ease-in-out infinite bounce-before;
+  -webkit-animation: 2s ease-in-out infinite bounce-before;
+  -moz-animation: 2s ease-in-out infinite bounce-before;
+}
+
+@media (max-width: 800px) {
+  .foldpg {
+    max-width: 80px;
+    max-height: 80px;
+    width: 80px;
+    height: 80px;
+    background-size: 78px 80px;
+  }
+  .foldpg:hover {
+    max-width: 120px !important;
+    max-height: 120px !important;
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .foldpg:before {
+    border-bottom: 80px solid #EEE !important;
+    border-left: 80px solid transparent !important;
+  }
+  .foldpg:hover:before {
+    content: "";
+    position: absolute;
+    border-bottom: 120px solid #DDD !important;
+    border-left: 120px solid transparent !important;
+  }
 }
 
 .foldpg:hover {
@@ -75,8 +93,9 @@ svg {
   max-height: 180px;
   width: 180px;
   height: 180px;
+  animation-play-state: paused;
   -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  -moz-animation-play-state: paused;
 }
 
 .foldpg:before {
@@ -88,8 +107,9 @@ svg {
   border-left: 120px solid transparent;
   -webkit-box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
 }
 
 .foldpg:hover:before {
@@ -115,26 +135,29 @@ svg {
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
   z-index: -1;
-  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
 }
 
 .shadow::before {
   left: 20px;
+  transform: skew(-5deg) rotate(-5deg);
   -webkit-transform: skew(-5deg) rotate(-5deg);
-          transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
 }
 
 .shadow::after {
   right: 20px;
+  transform: skew(5deg) rotate(5deg);
   -webkit-transform: skew(5deg) rotate(5deg);
-          transform: skew(5deg) rotate(5deg);
+  -moz-transform: skew(5deg) rotate(5deg);
 }
 
 .socialmedia {
   position: absolute;
-  bottom: 4vh;
-  left: 5.5vh;
+  bottom: 50px;
+  left: 35px;
 }
 
 .socialmedia a {
@@ -151,8 +174,9 @@ i.fa {
   display: inline-block;
   border-radius: 50px;
   padding: 0.2em 0.25em;
-  -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
 }
 
 i.fa:hover {
@@ -161,8 +185,8 @@ i.fa:hover {
 
 .arrow {
   position: absolute;
-  bottom: 10vh;
-  left: 50%;
+  bottom: 65px;
+  right: 45px;
   width: 30px;
   height: 30px;
   border-right: 1px #7a7a7a solid;
@@ -170,7 +194,6 @@ i.fa:hover {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
 }
 
 .arrow:before {
@@ -181,8 +204,9 @@ i.fa:hover {
   border-right: 0.5px #7a7a7a solid;
   border-bottom: 0.5px #7a7a7a solid;
   margin: 5px 0 0 5px;
+  animation: 1.3s arrow infinite;
   -webkit-animation: 1.3s arrow infinite;
-          animation: 1.3s arrow infinite;
+  -moz-animation: 1.3s arrow infinite;
 }
 
 @-webkit-keyframes arrow {
