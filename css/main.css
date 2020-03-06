@@ -1,27 +1,28 @@
 body {
-  background: #FF9D22;
+  background: #ff9d22;
   margin: 0;
   height: 100%;
   display: -ms-grid;
   display: grid;
   justify-items: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: 'Nunito', sans-serif;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: 'Nunito';
 }
 
 .welcome {
-  background: #FBFBFB;
+  position: relative;
+  background: #fbfbfb;
   height: 97vh;
-  width: 98vw;
-  min-height: 500px;
+  width: 97vw;
+  min-height: 620px;
   margin-top: 10px;
 }
 
 .welcome .name {
   text-align: center;
-  margin-top: 10vh;
+  margin-top: 1.5vh;
 }
 
 .welcome .name p {
@@ -36,7 +37,24 @@ body {
   height: auto;
   width: auto\9;
   /* ie8 */
-  margin-top: 3vh;
+  margin-top: 15vh;
+}
+
+.welcome .footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 93%;
+  margin: 0 4vw 5vh 0;
+}
+
+.welcome .footer .arrow {
+  float: right;
+  margin-top: 5px;
+}
+
+.welcome .footer .socialmedia {
+  float: left;
 }
 
 .underline {
@@ -49,7 +67,7 @@ body {
   max-height: 120px;
   width: 120px;
   height: 120px;
-  background: #FF9D22;
+  background: #ff9d22;
   cursor: pointer;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -60,32 +78,6 @@ body {
   animation: 2s ease-in-out infinite bounce-before;
   -webkit-animation: 2s ease-in-out infinite bounce-before;
   -moz-animation: 2s ease-in-out infinite bounce-before;
-}
-
-@media (max-width: 800px) {
-  .foldpg {
-    max-width: 80px;
-    max-height: 80px;
-    width: 80px;
-    height: 80px;
-    background-size: 78px 80px;
-  }
-  .foldpg:hover {
-    max-width: 120px !important;
-    max-height: 120px !important;
-    width: 120px !important;
-    height: 120px !important;
-  }
-  .foldpg:before {
-    border-bottom: 80px solid #EEE !important;
-    border-left: 80px solid transparent !important;
-  }
-  .foldpg:hover:before {
-    content: "";
-    position: absolute;
-    border-bottom: 120px solid #DDD !important;
-    border-left: 120px solid transparent !important;
-  }
 }
 
 .foldpg:hover {
@@ -103,7 +95,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-bottom: 120px solid #EEE;
+  border-bottom: 120px solid #eee;
   border-left: 120px solid transparent;
   -webkit-box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.3);
@@ -115,7 +107,7 @@ body {
 .foldpg:hover:before {
   content: "";
   position: absolute;
-  border-bottom: 180px solid #DDD;
+  border-bottom: 180px solid #ddd;
   border-left: 180px solid transparent;
 }
 
@@ -126,18 +118,15 @@ body {
 
 .shadow::before,
 .shadow::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: 2.2vh;
+  bottom: 5px;
   width: 100px;
   height: 10px;
   background: transparent;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
   z-index: -1;
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
 }
 
 .shadow::before {
@@ -154,12 +143,6 @@ body {
   -moz-transform: skew(5deg) rotate(5deg);
 }
 
-.socialmedia {
-  position: absolute;
-  bottom: 50px;
-  left: 35px;
-}
-
 .socialmedia a {
   text-decoration: none;
   color: #8a8a8a;
@@ -174,9 +157,9 @@ i.fa {
   display: inline-block;
   border-radius: 50px;
   padding: 0.2em 0.25em;
-  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
 }
 
 i.fa:hover {
@@ -184,9 +167,6 @@ i.fa:hover {
 }
 
 .arrow {
-  position: absolute;
-  bottom: 65px;
-  right: 45px;
   width: 30px;
   height: 30px;
   border-right: 1px #7a7a7a solid;
@@ -197,7 +177,7 @@ i.fa:hover {
 }
 
 .arrow:before {
-  content: '';
+  content: "";
   position: absolute;
   width: 15px;
   height: 15px;
@@ -232,6 +212,32 @@ i.fa:hover {
     opacity: 1;
     height: 15px;
     width: 15px;
+  }
+}
+
+@-webkit-keyframes arrow-mobile {
+  from {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+  }
+  to {
+    opacity: 1;
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@keyframes arrow-mobile {
+  from {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+  }
+  to {
+    opacity: 1;
+    height: 8px;
+    width: 8px;
   }
 }
 
@@ -280,6 +286,70 @@ i.fa:hover {
   }
   to {
     background-position: 0 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .foldpg {
+    max-width: 80px;
+    max-height: 80px;
+    width: 80px;
+    height: 80px;
+    background-size: 78px 80px;
+  }
+  .foldpg:hover {
+    max-width: 120px !important;
+    max-height: 120px !important;
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .foldpg:before {
+    border-bottom: 80px solid #eee !important;
+    border-left: 80px solid transparent !important;
+  }
+  .foldpg:hover:before {
+    content: "";
+    position: absolute;
+    border-bottom: 120px solid #ddd !important;
+    border-left: 120px solid transparent !important;
+  }
+  .welcome {
+    height: 97.5vh;
+    width: 95vw;
+  }
+  .welcome .name p {
+    font-size: 2em;
+  }
+  .welcome .name .portrait-img {
+    margin-top: 28vh;
+  }
+  .arrow {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .arrow:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 0.5px #7a7a7a solid;
+    border-bottom: 0.5px #7a7a7a solid;
+    margin: 1px 0 0 1px !important;
+    animation: 1.3s arrow-mobile infinite !important;
+    -webkit-animation: 1.3s arrow-mobile infinite !important;
+    -moz-animation: 1.3s arrow-mobile infinite !important;
+  }
+  .socialmedia a {
+    font-size: 1.5em !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .welcome {
+    height: 97vh;
+    min-height: 500px;
+  }
+  .welcome .name p {
+    font-size: 1em;
   }
 }
 /*# sourceMappingURL=main.css.map */
